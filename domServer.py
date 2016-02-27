@@ -5,8 +5,7 @@ import pickle
 import threading
 import struct
 import socket
-import tdominion
-	
+
 class traa(threading.Thread):
 	def __init__(self, f, **kwargs):
 		threading.Thread.__init__(self)
@@ -78,8 +77,8 @@ class OnlinePlayer(server.CST):
 			for player in game.players:	player.game = game
 			game.makePiles(baseSetBase)
 			options = baseSet+prosperity+seaside+adventures
-			#game.makePiles(random.sample(options, 10))
-			game.makePiles(options)
+			game.makePiles(random.sample(options, 10))
+			#game.makePiles(options)
 			game.makeStartDeck()
 			gT = traa(game.start)
 			gT.start()
